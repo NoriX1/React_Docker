@@ -6,4 +6,4 @@ before_install:
     - docker build -t norix/react_docker -f Dockerfile.dev .
 
 script:
-    - docker run norix/react_docker npm run test -- --coverage
+    - docker run -e CI=true norix/react_docker npm run test
