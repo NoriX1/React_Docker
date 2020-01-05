@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t norix/React_Docker -f Dockerfile.dev .
+
+script:
+    - docker run norix/React_Docker npm run test -- --coverage
